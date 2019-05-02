@@ -7,7 +7,7 @@ const Navigation = (WrappedComponent, path) => {
   class WithNavigation extends Component {
   	state = {
       onEnter: false,
-      onBackspace: false,
+      onHome: false,
       closed: false,
       menuClose: false,
       path: null
@@ -19,9 +19,9 @@ const Navigation = (WrappedComponent, path) => {
           this.handleEnter();
           break;
 
-        case 'Backspace':
+        case 'Home':
           this.closePage('close-right', {
-            onBackspace: true
+            onHome: true
           });
           break;
 
@@ -58,7 +58,7 @@ const Navigation = (WrappedComponent, path) => {
 
     render() {
       if (path !== '/') {
-        if (this.state.onBackspace) {
+        if (this.state.onHome) {
           return <Redirect to="/" />;
         }
       	
