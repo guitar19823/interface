@@ -12,7 +12,7 @@ const Footer = (props) => {
       {props.group === 'settings' && <div onClick={props.handleEnter}>accept</div>}
       <div
         onClick={() => props.closePage('close-right', {
-          onEscape: true
+          onBackspace: true
         })}
       >
         menu

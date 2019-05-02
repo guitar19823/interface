@@ -48,7 +48,7 @@ footer:before {
 }
 
 .buttons div:last-child:before {
-	content: "esc";
+	content: "backspace";
 }
 
 .buttons div:before {

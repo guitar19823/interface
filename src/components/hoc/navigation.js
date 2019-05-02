@@ -7,7 +7,7 @@ const Navigation = (WrappedComponent, path) => {
   class WithNavigation extends Component {
   	state = {
       onEnter: false,
-      onEscape: false,
+      onBackspace: false,
       closed: false,
       menuClose: false,
       path: null
@@ -19,13 +19,13 @@ const Navigation = (WrappedComponent, path) => {
           this.handleEnter();
           break;
 
-        case 'Escape':
+        case 'Backspace':
           this.closePage('close-right', {
-            onEscape: true
+            onBackspace: true
           });
           break;
 
-        default:
+        default: console.log(event.key)
           break;
       }
     }
@@ -53,14 +53,12 @@ const Navigation = (WrappedComponent, path) => {
     }
 
     componentDidMount() {
-      setTimeout(() => {
-        this.settings.focus();
-      }, 500);
+       this.settings.focus();
     }
 
     render() {
       if (path !== '/') {
-        if (this.state.onEscape) {
+        if (this.state.onBackspace) {
           return <Redirect to="/" />;
         }
       	
