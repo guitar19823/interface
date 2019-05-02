@@ -2,11 +2,59 @@
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	background: url(../../img/background.jpg) no-repeat;
+	background: url(../../img/background.jpg) no-repeat center;
 	background-size: cover;
+	perspective: 900px;
+}
+
+.navigation {
+	position: relative;
+	outline: none;
+	width: inherit;
+	height: inherit;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	perspective: 900px;
+	--very-big-text-size: 20px;
+	--big-text-size: 			16px;
+	--medium-text-size: 	10px;
+	--small-text-size: 		3px;
+
+	--icon-size: 12px;
+	--arrow-width: 8px;
+	--arrow-height: 12px;
+	--social-icon-width: 30px;
+	--social-icon-height: 23px;
+
+	--color-yellow: 		 	rgb(255,179,18);
+	--color-white-high: 	rgba(255, 255, 255, .9);
+	--color-white-medium: rgba(255, 255, 255, .5);
+	--color-white-light: 	rgba(255, 255, 255, .1);
+}
+
+@media screen and (min-width: 768px) {
+	.navigation {
+		--very-big-text-size: 22px;
+		--big-text-size: 			18px;
+		--medium-text-size: 	12px;
+		--small-text-size: 		5px;
+
+		--icon-size: 14px;
+		--arrow-width: 10px;
+		--arrow-height: 14px;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	.navigation {
+		--very-big-text-size: 28px;
+		--big-text-size: 			22px;
+		--medium-text-size: 	16px;
+		--small-text-size: 		7px;
+
+		--icon-size: 18px;
+		--arrow-width: 12px;
+		--arrow-height: 18px;
+	}
 }

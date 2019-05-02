@@ -1,0 +1,251 @@
+.menu,
+.settings,
+.contacts,
+.not-found {
+	width: 90%;
+}
+
+.menu {
+	animation: open-left .5s ease-out both;
+	transform-origin: left;
+}
+
+.settings,
+.contacts,
+.not-found {
+	animation: open-right .5s ease-out both;
+	transform-origin: right;
+}
+
+.close-right {
+	animation: close-right .5s ease-in both;
+}
+
+.close-left {
+	animation: close-left .5s ease-in both;
+}
+
+@keyframes open-left {
+	0% {transform: rotateY(70deg) translateX(-150vmax)}
+	100% {transform: rotateY(3deg) translateX(0)}
+}
+
+@keyframes open-right {
+	0% {transform: rotateY(-70deg) translateX(150vmax)}
+	100% {transform: rotateY(3deg) translateX(0)}
+}
+
+@keyframes close-left {
+	0% {transform: rotateY(3deg) translateX(0)}
+	100% {transform: rotateY(70deg) translateX(-150vmax)}
+}
+
+@keyframes close-right {
+	0% {transform: rotateY(3deg) translateX(0)}
+	100% {transform: rotateY(-70deg) translateX(150vmax)}
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	cursor: default;
+}
+
+a, p, div {
+	text-transform: uppercase;
+	font-size: var(--big-text-size);
+	color: var(--color-white-medium);
+}
+
+main {
+	border-top: 2px solid var(--color-white-light);
+	border-bottom: 2px solid var(--color-white-light);
+	padding: 5px 0;
+	margin-bottom: 40px;
+}
+
+.menu main > div,
+.settings main > div {
+	padding: 2px 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu main > div:hover,
+.settings main > div:hover {
+	position: relative;
+	background: var(--color-white-light);
+}
+
+.menu main > div:hover > p,
+.settings main > div:hover > p {
+	color: var(--color-white-high);
+}
+
+.not-found main > div {
+	padding: 20px;
+	text-align: center;
+	color: var(--color-white-high);
+}
+
+.menu main > div,
+.menu main > div > p {
+	cursor: pointer;
+}
+
+.not-found main > div > p:first-child {
+	font-size: 96px;
+	color: var(--color-yellow);
+}
+
+.menu main > div > p > img {
+	width: var(--icon-size);
+	margin-right: 10px;
+}
+
+.menu main > div:hover:before,
+.settings main > div:hover:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	display: block;
+	border-left: 4px solid var(--color-yellow);
+	border-top: 11px solid transparent;
+	border-bottom: 11px solid transparent;
+}
+
+.checkbox {
+	width: 100px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+}
+
+.box {
+	display: block;
+	width: calc(var(--big-text-size) - 4px);
+	height: calc(var(--big-text-size) - 4px);
+	border: 2px solid var(--color-yellow);
+	border-radius: 3px;
+}
+
+.box:hover {
+	box-shadow: 0 0 7px var(--color-yellow);
+}
+
+.checkbox input {
+	display: none;
+}
+
+.checkbox input:checked + .box {
+	background: url(../../img/checkmark.png) no-repeat;
+	background-size: 100%;
+}
+
+.setting-level {
+	width: 100px;
+	text-transform: capitalize;
+	font-size: var(--big-text-size);
+	color: var(--color-white-high);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.arrow-left {
+	content: "";
+	width: var(--arrow-width);
+	height: var(--arrow-height);
+	background: url(../../img/arrows.png);
+	background-size: 200%;
+	cursor: pointer;
+}
+
+.arrow-right {
+	content: "";
+	width: var(--arrow-width);
+	height: var(--arrow-height);
+	background: url(../../img/arrows.png) 8px;
+	background-size: 200%;
+	cursor: pointer;
+}
+
+
+@media screen and (min-width: 480px) {
+	.menu,
+	.settings,
+	.contacts,
+	.not-found {
+		width: 70%;
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+	main {
+		margin-bottom: 80px;
+	}
+
+	.menu main > div,
+	.settings main > div {
+		padding: 3px 16px;
+	}
+	
+	.menu main > div:hover:before,
+	.settings main > div:hover:before {
+		content: "";
+		display: block;
+		border-left: 6px solid var(--color-yellow);
+		border-top: 14px solid transparent;
+		border-bottom: 14px solid transparent;
+	}
+
+	.checkbox,
+	.setting-level {
+		width: 140px;
+	}
+
+	.arrow-right {
+		background-position: 10px
+	}
+}
+
+@media screen and (min-width: 980px) {
+	.menu,
+	.settings,
+	.contacts,
+	.not-found {
+		width: 50%;
+	}
+
+	main {
+		margin-bottom: 100px;
+	}
+
+	.menu main > div,
+	.settings main > div {
+		padding: 5px 20px;
+	}
+
+	.menu main > div:hover:before,
+	.settings main > div:hover:before {
+		content: "";
+		display: block;
+		border-left: 7px solid var(--color-yellow);
+		border-top: 18px solid transparent;
+		border-bottom: 18px solid transparent;
+	}
+
+	.checkbox,
+	.setting-level {
+		width: 180px;
+	}
+
+	.arrow-right {
+		background-position: 12px
+	}
+}

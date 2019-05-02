@@ -1,0 +1,66 @@
+.social {
+	position: absolute;
+	display: flex;
+
+	animation: to-top .2s .5s ease-out both;
+}
+
+.social a {
+	border-radius: 3px;
+	margin: 0 5px;
+	width: var(--social-icon-width);
+	height: var(--social-icon-height);
+	cursor: pointer;
+}
+
+.social a:hover {
+	box-shadow: 0 0 5px var(--color-white-medium);
+}
+
+.social a:nth-child(1) {
+	background: url(../../img/social.png) 120px 0px;
+	background-size: 120px;
+}
+
+.social a:nth-child(2) {
+	background: url(../../img/social.png) 91px 0px;
+	background-size: 120px;
+}
+
+.social a:nth-child(3) {
+	background: url(../../img/social.png) 90px -24px;
+	background-size: 120px;
+}
+
+.social a:nth-child(4) {
+	background: url(../../img/social.png) 60px 0px;
+	background-size: 120px;
+}
+
+.social a:nth-child(5) {
+	background: url(../../img/social.png) 29px 0px;
+	background-size: 120px;
+}
+
+
+@media screen and (min-width: 480px) {
+	.social {
+		flex-direction: column;
+
+		animation: to-left .2s .5s ease-out both;
+	}
+
+	.social a {
+		margin: 5px 0;
+	}
+}
+
+@keyframes to-left {
+	0% {right: -50px}
+	100% {right: 10px}
+}
+
+@keyframes to-top {
+	0% {bottom: -50px}
+	100% {bottom: 30px}
+}

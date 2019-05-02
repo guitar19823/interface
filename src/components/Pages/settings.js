@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './settings.css';
+import Header from '../Header';
+import Footer from '../Footer';
+
+import './pages.css';
+
 import {
-	actionInvertionY,
-	actionAntiAliasing,
-	actionMouseSensivity,
-	actionTextureDetails,
-	actionGraphicDetails
+  actionInvertionY,
+  actionAntiAliasing,
+  actionMouseSensivity,
+  actionTextureDetails,
+  actionGraphicDetails
 } from '../../actions/settings';
 
 const levels = [
@@ -29,14 +33,12 @@ const Settings = (props) => {
 	
 	return (
 		<div className="settings">
-			<div id="settings_panel-head">
-        <p>Settings</p>
-      </div>
-      <div id="settings_panel-body">
+      <Header title={'Settings'} />
+      <main>
         <div>
           <p>Axis inversion Y</p>
           <label className="checkbox" onChange={() => checkInvertionY(!invertionY)}>
-          	<input type="checkbox" defaultChecked={invertionY}  />
+          	<input type="checkbox" defaultChecked={invertionY} />
           	<span className="box"></span>
           </label>
         </div>
@@ -71,14 +73,8 @@ const Settings = (props) => {
           	<span className="arrow-right" onClick={() => graphicDetails(1, graphic)}></span>
         	</div>
         </div>
-      </div>
-      <div  id="settings_panel-footer">
-      	<div className="buttons">
-	        <div>accept</div>
-	        <div>back</div>
-	      </div>
-        <div className="version">v 1.0.1</div>
-      </div>
+      </main>
+      <Footer group={'settings'} {...props} />
 		</div>
 	);
 };

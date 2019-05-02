@@ -1,0 +1,88 @@
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+input,
+textarea {
+	font-size: var(--medium-text-size);
+	margin-bottom: 6px;
+	outline: none;
+	color: var(--color-white-high);
+}
+
+input[type=text] {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--color-white-light);
+	padding: 6px;
+}
+
+input[type=text]:hover {
+	border-bottom: 1px solid var(--color-yellow);
+}
+
+input[type=text]:focus {
+	border-bottom: 1px solid var(--color-white-high);
+}
+
+input[type=submit] {
+	padding: 5px;
+	background: var(--color-white-light);
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	color: var(--color-yellow);
+}
+
+textarea {
+	background: transparent;
+	resize: none;
+	height: 3rem;
+	border: 1px solid var(--color-white-light);
+	padding: 6px;
+}
+
+textarea:hover {
+	border: 1px solid var(--color-yellow);
+}
+
+textarea:focus {
+	border: 1px solid var(--color-white-high);
+}
+
+
+@media screen and (min-width: 768px) {
+	input,
+	textarea {
+		margin-bottom: 8px;
+	}
+	
+	input[type=text] {
+		padding: 8px;
+	}
+
+	textarea {
+		height: 4rem;
+		padding: 8px;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	input,
+	textarea {
+		margin-bottom: 10px;
+	}
+
+	input[type=text] {
+		padding: 10px;
+	}
+
+	textarea {
+		height: 5rem;
+		padding: 10px;
+	}
+}
